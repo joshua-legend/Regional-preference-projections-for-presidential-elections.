@@ -139,7 +139,7 @@ public class ButtonMap extends JPanel {
 				}
 				@Override
 				public void mouseEntered(MouseEvent e) {
-					button[city].setBackground(Color.GRAY);
+					intColor(button[city],cityStr);
 				}
 			});
 			button[city].addActionListener(new ActionListener() {
@@ -178,7 +178,7 @@ public class ButtonMap extends JPanel {
 					@Override
 					public void mouseEntered(MouseEvent e) {
 						for(int b = 0; b<city.length;b++) {
-							button[city[b]].setBackground(Color.GRAY);
+							areaColor(button[city[b]],cityStr);
 						};
 					}
 				});
@@ -213,4 +213,43 @@ public class ButtonMap extends JPanel {
 				}
 			}
 	}
+	private void intColor(JButton button,String cityStr) {
+		if(cityStr=="서울시") {
+			button.setBackground(new Color(174,25,50));
+		}else if(cityStr=="세종시") {
+			button.setBackground(new Color(185, 221, 250));
+		}else if(cityStr=="대전광역시") {
+			button.setBackground(new Color(210, 250, 221));
+		}else if(cityStr=="대구광역시") {
+			button.setBackground(new Color(69,121,189));
+		}else if(cityStr=="울산광역시") {
+			button.setBackground(new Color(9, 218, 146));
+		}else if(cityStr=="부산광역시") {
+			button.setBackground(new Color(222, 239, 255));
+		}
+	}
+	private void areaColor(JButton button, String cityStr) {
+		if(cityStr=="인천광역시") {
+			button.setBackground(new Color(0, 178, 169));
+		}else if(cityStr=="제주도") {
+			button.setBackground(new Color(245, 142, 7));
+		}else if(cityStr=="경기도") {
+			button.setBackground(new Color(22, 65, 148));
+		}else if(cityStr=="충청북도") {
+			button.setBackground(new Color(145, 237, 133));
+		}else if(cityStr=="충청남도") {
+			button.setBackground(new Color(203, 174, 245));
+		}else if(cityStr=="전라북도") {
+			button.setBackground(new Color(100, 167, 11));
+		}else if(cityStr=="전라남도") {
+			button.setBackground(new Color(247, 209, 23));
+		}else if(cityStr=="강원도") {
+			button.setBackground(new Color(214, 210, 196));
+		}else if(cityStr=="경상북도") {
+			button.setBackground(new Color(155, 228, 250));
+		}else if(cityStr=="경상남도") {
+			button.setBackground(new Color(250, 197, 185));
+		}
+	}
+
 }
